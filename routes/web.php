@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboardController;
 
@@ -19,3 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [dashboardController::class, 'index']);
+Route::get('login', [AuthController::class, 'index']);
+Route::get('register', [AuthController::class, 'register']);
+Route::post('register', [AuthController::class, 'registerStore']);
