@@ -19,7 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [dashboardController::class, 'index']);
-Route::get('login', [AuthController::class, 'index']);
+Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::post('login', [AuthController::class, 'login']);
 Route::get('register', [AuthController::class, 'register']);
 Route::post('register', [AuthController::class, 'registerStore']);
+Route::get('logout', [AuthController::class, 'logout']);
+
+
+Route::middleware('auth')->prefix('admin')->group(function (){
+    Route::get('/dashboard', [dashboardController::class, 'index']);
+
+});

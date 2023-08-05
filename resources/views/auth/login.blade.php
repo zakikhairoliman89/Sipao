@@ -44,16 +44,16 @@
 
                         <div class="card-body p-4">
                             <div class="p-3">
-                                <form class="mt-4" action="https://themesdesign.in/veltrix-codeIgniter/layouts/index.html">
-
+                                <form class="mt-4" action="{{url('login')}}" method="POST">
+                                    @csrf
                                     <div class="mb-3">
                                         <label class="form-label" for="username">Username</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="Enter username">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label" for="userpassword">Password</label>
-                                        <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                        <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">
                                     </div>
 
                                     <div class="mb-3 row">
