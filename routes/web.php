@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,7 @@ Route::get('logout', [AuthController::class, 'logout']);
 Route::middleware('auth')->prefix('admin')->group(function (){
     Route::get('/dashboard', [dashboardController::class, 'index']);
 
+    Route::get('/produk',[ProdukController::class, 'index']);
+    Route::get('/produk/create',[ProdukController::class, 'create']);
+    Route::post('/produk',[ProdukController::class, 'store']);
 });
