@@ -16,8 +16,20 @@
                 </li>
                 <li>
                     <a href="{{ url('admin/produk') }}" class="waves-effect">
-                        <i class="ti-home"></i><span class="badge rounded-pill bg-primary float-end"></span>
+                        <i class="fa-solid fa-cart-shopping"></i><span class="badge rounded-pill bg-primary float-end"></span>
                         <span>Produk</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('admin/pesanan-baru') }}" class="waves-effect">
+                        <i class="fa-solid fa-cart-plus"></i><span class="badge rounded-pill bg-primary float-end"></span>
+                        <span>Pesanan Baru</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('admin/pesanan-selesai') }}" class="waves-effect">
+                        <i class="fa-solid fa-cart-flatbed-suitcase"></i><span class="badge rounded-pill bg-primary float-end"></span>
+                        <span>Pesanan Selesai</span>
                     </a>
                 </li>
 

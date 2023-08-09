@@ -23,9 +23,17 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
-                                        <a href="" class="btn btn-dark"><i class="fa fa-info"></i></a>
-                                        <a href="" class="btn btn-warning"><i class="fa fa-edit"></i></a>
-                                        <a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                        <a href="{{ url('admin/produk', $produk->id) }}" class="btn btn-dark"><i
+                                                class="fa fa-info"></i></a>
+                                        <a href="{{ url('admin/produk', $produk->id) }}/edit" class="btn btn-warning"><i
+                                                class="fa fa-edit"></i></a>
+                                        <form action="{{ url('admin/produk/delete', $produk->id) }}" class="d-inline" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger"
+                                                onclick="return confirm('apakah ingin menghapus?')"><i
+                                                    class="fa fa-trash"></i></button>
+                                        </form>
                                     </td>
                                     <td>{{ $produk->nama_produk }}</td>
                                     <td>{{ $produk->stok_produk }}</td>

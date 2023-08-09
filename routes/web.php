@@ -3,7 +3,9 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\PesananBaruController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\USer\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +18,11 @@ use App\Http\Controllers\ProdukController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('user.home');
+// });
+
+
 
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
@@ -33,4 +37,15 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::get('/produk',[ProdukController::class, 'index']);
     Route::get('/produk/create',[ProdukController::class, 'create']);
     Route::post('/produk',[ProdukController::class, 'store']);
+    Route::get('/produk/{produk}',[ProdukController::class, 'show']);
+    Route::get('/produk/{produk}/edit',[ProdukController::class, 'edit']);
+    Route::put('/produk/{produk}/edit',[ProdukController::class, 'update']);
+    Route::delete('/produk/delete/{produk}',[ProdukController::class, 'destroy']);
+
+    Route::get('/pesanan-baru', [PesananBaruController::class, 'index']);
 });
+
+
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/shop', [HomeController::class, 'shop']);
+Route::get('/shop/{produk}', [HomeController::class, 'detail']);

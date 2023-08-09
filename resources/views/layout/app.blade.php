@@ -23,6 +23,8 @@
     <!-- App Css-->
     <link href="{{ url('assets') }}/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
 
+    <script src="https://kit.fontawesome.com/a00d64506c.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body data-sidebar="dark">
