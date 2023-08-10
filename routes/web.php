@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\PesananBaruController;
 use App\Http\Controllers\ProdukController;
-use App\Http\Controllers\USer\HomeController;
+use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\ShopController;
 
 /*
@@ -52,7 +52,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/shop', [HomeController::class, 'shop']);
 Route::get('/shop/{produk}', [HomeController::class, 'detail']);
 Route::get('/cart', [ShopController::class, 'cart']);
-Route::post('/add-cart', [ShopController::class, 'addCart']);
+Route::post('/add-cart', [ShopController    ::class, 'addCart']);
 
 
 Route::get('/checkout', [ShopController::class, 'index_checkOut']);
