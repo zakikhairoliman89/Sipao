@@ -13,7 +13,7 @@ class ShopController extends Controller
 {
     public function cart()
     {
-        return view('user.cart', [
+        return view('user.Cart', [
             'list_cart' => auth()->user()->cart
         ]);
     }
@@ -97,6 +97,6 @@ class ShopController extends Controller
         }
         $data['total'] = $f + $d;
         $data['id_pesanan'] = $id;
-        return view('user.invioce', $data);
+        return view('user.Invioce', $data);
     }
 }
