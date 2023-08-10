@@ -37,7 +37,7 @@ class ShopController extends Controller
             $h[] = $cart->produk->harga_produk;
         }
         $data['total'] = array_sum($h);
-        return view('user.checkout', $data);
+        return view('user.Checkout', $data);
     }
 
     public function store_checkOut(Request $request)
