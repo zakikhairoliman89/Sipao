@@ -72,7 +72,7 @@
                                         class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary"
                                         onclick="return alert('login dahulu')">Add To Cart</a>
                                 @else
-                                    <form action="{{ url('cart') }}" method="post">
+                                    <form action="{{ url('add-cart') }}" method="post">
                                         @csrf
                                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                         <input type="hidden" name="produk_id" value="{{ $produk->id }}">

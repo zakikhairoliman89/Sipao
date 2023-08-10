@@ -30,27 +30,31 @@ class AuthController extends Controller
         return redirect('login');
     }
 
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         $credentials =  $request->validate([
             'username' => 'required',
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($credentials)){
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('admin/dashboard');
+            if (auth()->user()->level == 'admin') {
+                return redirect()->intended('admin/dashboard');
+            } else {
+                return redirect()->intended('/');
+            }
         }
 
         return back();
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return redirect('/login');
     }
-
-
 }

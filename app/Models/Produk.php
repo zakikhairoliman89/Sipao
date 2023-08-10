@@ -23,4 +23,15 @@ class Produk extends Model
     // {
     //     $this->attributes['filenames'] = json_encode($value);
     // }
+
+    public function cart()
+    {
+        return $this->hasMany(Cart::class, 'produk_id');
+    }
+
+    public function pesanan()
+    {
+        return $this->hasMany(Pesanan::class,'produk_id');
+    }
+
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\PesananBaruController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\USer\HomeController;
+use App\Http\Controllers\User\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +44,18 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::delete('/produk/delete/{produk}',[ProdukController::class, 'destroy']);
 
     Route::get('/pesanan-baru', [PesananBaruController::class, 'index']);
+    Route::get('/pesanan-baru/{pesanan}', [PesananBaruController::class, 'show']);
 });
 
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/shop', [HomeController::class, 'shop']);
 Route::get('/shop/{produk}', [HomeController::class, 'detail']);
+Route::get('/cart', [ShopController::class, 'cart']);
+Route::post('/add-cart', [ShopController::class, 'addCart']);
+
+
+Route::get('/checkout', [ShopController::class, 'index_checkOut']);
+Route::post('/checkout', [ShopController::class, 'store_checkOut']);
+Route::get('/invoce', [ShopController::class, 'index_invoce']);
+

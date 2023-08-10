@@ -140,13 +140,13 @@
                                 <ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
                                     <li class=""><a href="{{ url('cart') }}"
                                             class="nav-link text-left">
-                                            {{-- @if (!Auth::check())
+                                            @if (!Auth::check())
                                                 <i class="fa-solid fa-bag-shopping"></i> Cart
                                             @else
                                                 {{ auth()->user()->cart->count() }} <i
                                                     class="fa-solid fa-bag-shopping"></i>
                                                 Cart
-                                            @endif --}}
+                                            @endif
                                         </a></li>
                                     <li class="">
                                         @if (!Auth::check())
