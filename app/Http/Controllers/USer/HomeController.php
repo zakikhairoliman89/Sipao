@@ -25,7 +25,14 @@ class HomeController extends Controller
     {
         return view('user.Detail-shop', [
             'produk' => $produk,
-            'gambar' => json_decode($produk->gambar_produk)
+            'gambar' => json_decode($produk->gambar_produk),
+            'size_bola' => json_decode($produk->size_bola),
+            'warna_bola' => json_decode($produk->warna_bola),
+            'tipe_bola' => json_decode($produk->tipe_bola),
+            'size_baju' => json_decode($produk->size_baju),
+            'warna_baju' => json_decode($produk->warna_baju),
+            'size_sepatu' => json_decode($produk->size_sepatu),
+            'warna_sepatu' => json_decode($produk->warna_sepatu),
         ]);
     }
 }

@@ -20,9 +20,9 @@
                     <h2 class="text-primary">{{ $produk->nama_produk }}</h2>
                     <h5 class="text-primary">Rp. {{ number_format($produk->harga_produk, 2, ',', '.') }}</h5>
                     <p>{!! $produk->deskripsi_produk !!}</p>
-                    <div class="mb-5">
+                    <div class="mb-2">
                         <p>Stok : {{ $produk->stok_produk }}</p>
-                        <p>Size : {{ $produk->size_produk }}</p>
+
                     </div>
                     <p>
                         @if (!Auth::check())
@@ -33,11 +33,122 @@
                                 @csrf
                                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                 <input type="hidden" name="produk_id" value="{{ $produk->id }}">
-                                <button class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Add To
+                                @if (!empty($size_bola))
+                                    <div class="d-flex">
+                                        Size Bola :
+                                        @foreach ($size_bola as $index => $bola)
+                                            <div class="form-check mx-2">
+                                                <input class="form-check-input" type="radio" name="size_bola"
+                                                    id="size-bola-{{ $index }}" value="{{ $bola }}">
+                                                <label class="form-check-label" for="size-bola-{{ $index }}">
+                                                    {{ $bola }}
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                    <div class="d-flex">
+                                        Warna Bola :
+                                        @foreach ($warna_bola as $index => $bola)
+                                            <div class="form-check mx-2">
+                                                <input class="form-check-input" type="radio" name="warna_bola"
+                                                    id="warna-bola-{{ $index }}" value="{{ $bola }}">
+                                                <label class="form-check-label" for="warna-bola-{{ $index }}">
+                                                    {{ $bola }}
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                    <div class="d-flex">
+                                        Tipe Bola :
+                                        @foreach ($tipe_bola as $index => $bola)
+                                            <div class="form-check mx-2">
+                                                <input class="form-check-input" type="radio" name="tipe_bola"
+                                                    id="tipe-bola-{{ $index }}" value="{{ $bola }}">
+                                                <label class="form-check-label" for="tipe-bola-{{ $index }}">
+                                                    {{ $bola }}
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                @endif
+
+                                @if (!empty($size_sepatu))
+                                    <div class="d-flex">
+                                        Size Sepatu :
+                                        @foreach ($size_sepatu as $index => $sepatu)
+                                            <div class="form-check mx-2">
+                                                <input class="form-check-input" type="radio" name="size_sepatu"
+                                                    id="size-sepatu-{{ $index }}" value="{{ $sepatu }}">
+                                                <label class="form-check-label" for="size-sepatu-{{ $index }}">
+                                                    {{ $sepatu }}
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                    <div class="d-flex">
+                                        Warna Sepatu :
+                                        @foreach ($warna_sepatu as $index => $sepatu)
+                                            <div class="form-check mx-2">
+                                                <input class="form-check-input" type="radio" name="warna_sepatu"
+                                                    id="warna-sepatu-{{ $index }}" value="{{ $sepatu }}">
+                                                <label class="form-check-label" for="warna-sepatu-{{ $index }}">
+                                                    {{ $sepatu }}
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                @endif
+
+                                @if (!empty($size_baju))
+                                    <div class="d-flex">
+                                        Size Baju :
+                                        @foreach ($size_baju as $index => $baju)
+                                            <div class="form-check mx-2">
+                                                <input class="form-check-input" type="radio" name="size_baju"
+                                                    id="size-baju-{{ $index }}" value="{{ $baju }}">
+                                                <label class="form-check-label" for="size-baju-{{ $index }}">
+                                                    {{ $baju }}
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                    <div class="d-flex">
+                                        Warna Baju :
+                                        @foreach ($warna_baju as $index => $baju)
+                                            <div class="form-check mx-2">
+                                                <input class="form-check-input" type="radio" name="warna_baju"
+                                                    id="warna-baju-{{ $index }}" value="{{ $baju }}">
+                                                <label class="form-check-label" for="warna-baju-{{ $index }}">
+                                                    {{ $baju }}
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                @endif
+
+                                <div class="my-3">
+                                    <div class="input-group mb-3" style="max-width: 200px;">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-outline-primary js-btn-minus"
+                                                type="button">&minus;</button>
+                                        </div>
+                                        <input type="text" class="form-control text-center border mr-0" value="1"
+                                            placeholder="" aria-label="Example text with button addon"
+                                            aria-describedby="button-addon1" name="total">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-primary js-btn-plus"
+                                                type="button">&plus;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary mt-2">Add To
                                     Cart</button>
                             </form>
                         @endif
-
                 </div>
             </div>
         </div>

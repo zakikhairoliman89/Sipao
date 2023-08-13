@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -128,18 +127,7 @@
                                             class="nav-link text-left">About</a></li> --}}
                                     <li class=""><a href="{{ url('shop') }}"
                                             class="nav-link text-left">Shop</a></li>
-                                    {{-- <li class=""><a href="{{ url('contact') }}"
-                                            class="nav-link text-left">Contact</a></li> --}}
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <div class="mx-auto">
-                            <nav class="site-navigation position-relative text-left" role="navigation">
-                                <ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
-                                    <li class=""><a href="{{ url('cart') }}"
-                                            class="nav-link text-left">
+                                    <li class=""><a href="{{ url('cart') }}" class="nav-link text-left">
                                             @if (!Auth::check())
                                                 <i class="fa-solid fa-bag-shopping"></i> Cart
                                             @else
@@ -163,6 +151,39 @@
                                             </a>
                                         @endif
                                     </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="mx-auto">
+                            <nav class="site-navigation position-relative text-left" role="navigation">
+                                <ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-lg-block border-none">
+                                    {{-- <li class=""><a href="{{ url('cart') }}"
+                                            class="nav-link text-left">
+                                            @if (!Auth::check())
+                                                <i class="fa-solid fa-bag-shopping"></i> Cart
+                                            @else
+                                                {{ auth()->user()->cart->count() }} <i
+                                                    class="fa-solid fa-bag-shopping"></i>
+                                                Cart
+                                            @endif
+                                        </a></li>
+                                    <li class="">
+                                        @if (!Auth::check())
+                                            <a href="{{ url('login') }}" class="nav-link text-left">
+                                                <i class="fa fa-user">
+                                                </i>
+                                                login
+                                            </a>
+                                        @else
+                                            <a href="{{ url('logout') }}" class="nav-link text-left">
+                                                <i class="fa fa-user">
+                                                </i>
+                                                {{ auth()->user()->username }}
+                                            </a>
+                                        @endif
+                                    </li> --}}
                                 </ul>
                             </nav>
                         </div>

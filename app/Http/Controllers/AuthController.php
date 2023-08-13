@@ -22,7 +22,13 @@ class AuthController extends Controller
     {
         $user = new User();
         $user->username = $request->username;
+        $user->frist_name = $request->frist_name;
+        $user->last_name = $request->last_name;
+        $user->state_country = $request->state_country;
+        $user->postal_zip = $request->postal_zip;
+        $user->phone = $request->phone;
         $user->email = $request->email;
+        $user->alamat = $request->alamat;
         $user->password = bcrypt($request->password);
         $user->level = 'user';
         $user->save();
@@ -34,7 +40,8 @@ class AuthController extends Controller
     {
         $credentials =  $request->validate([
             'username' => 'required',
-            'password' => 'required'
+            'password' => 'required',
+
         ]);
 
         if (Auth::attempt($credentials)) {

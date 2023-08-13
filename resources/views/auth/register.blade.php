@@ -32,15 +32,12 @@
     <div class="account-pages my-5 pt-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-4">
+                <div class="col-md-8">
                     <div class="card overflow-hidden">
                         <div class="bg-primary">
                             <div class="text-primary text-center p-4">
                                 <h5 class="text-white font-size-20">Free Register</h5>
-                                <p class="text-white-50">Get your free Veltrix account now.</p>
-                                <a href="index.html" class="logo logo-admin">
-                                    <img src="{{ url('assets') }}/images/logo-sm.png" height="24" alt="logo">
-                                </a>
+
                             </div>
                         </div>
 
@@ -48,35 +45,84 @@
                             <div class="p-3">
                                 <form class=" mt-4" action="{{ url('register') }}" method="POST">
                                     @csrf
-                                    <div class="mb-3">
-                                        <label class="form-label" for="useremail">Email</label>
-                                        <input type="email" class="form-control" id="useremail" name="email"
-                                            placeholder="Enter email">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="useremail">Email</label>
+                                                <input type="email" class="form-control" id="useremail" name="email"
+                                                    placeholder="Enter email">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="username">Username</label>
+                                                <input type="text" class="form-control" id="username"
+                                                    name="username" placeholder="Enter username">
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="mb-3">
-                                        <label class="form-label" for="username">Username</label>
-                                        <input type="text" class="form-control" id="username" name="username"
-                                            placeholder="Enter username">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="userpassword">Password</label>
+                                                <input type="password" class="form-control" id="userpassword"
+                                                    name="password" placeholder="Enter password">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label">First Name</label>
+                                                <input type="text" class="form-control" name="frist_name"
+                                                    placeholder="Frist Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" name="last_name"
+                                                    placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label">State Country</label>
+                                                <input type="text" class="form-control" name="state_country"
+                                                    placeholder="State Country">
+                                            </div>
+                                        </div>
                                     </div>
 
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label">Posta / Zip</label>
+                                                <input type="text" class="form-control" name="postal_zip"
+                                                    placeholder="Posta / Zip">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <label class="form-label">Phone</label>
+                                                <input type="number" class="form-control" name="phone"
+                                                    placeholder="Phone">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                     <div class="mb-3">
-                                        <label class="form-label" for="userpassword">Password</label>
-                                        <input type="password" class="form-control" id="userpassword" name="password"
-                                            placeholder="Enter password">
+                                        <label class="form-label">Alamat</label>
+                                        <input type="text" class="form-control" name="alamat"
+                                            placeholder="Alamat">
                                     </div>
 
                                     <div class="mb-3 row">
                                         <div class="col-12 text-end">
                                             <button class="btn btn-primary w-md waves-effect waves-light"
                                                 type="submit">Register</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-2 mb-0 row">
-                                        <div class="col-12 mt-4">
-                                            <p class="mb-0">By registering you agree to the Veltrix <a href="#"
-                                                    class="text-primary">Terms of Use</a></p>
                                         </div>
                                     </div>
 
@@ -88,14 +134,10 @@
                     </div>
 
                     <div class="mt-5 text-center">
-                        <p>Already have an account ? <a href="pages-login.html" class="fw-medium text-primary"> Login
+                        <p>Already have an account ? <a href="{{ url('login') }}" class="fw-medium text-primary">
+                                Login
                             </a> </p>
-                        <p>©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script> Veltrix. Crafted with <i class="mdi mdi-heart text-danger"></i> by
-                            <a href="https://1.envato.market/themesdesign" target="_blank">Themesdesign</a>
-                        </p>
+                        <p>
                     </div>
 
 

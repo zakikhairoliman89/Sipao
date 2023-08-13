@@ -93,7 +93,7 @@
             <div class="row justify-content-center text-center align-items-center">
                 <div class="col-md-8">
                     <span class="sub-title">Welcome</span>
-                    <h2>SIPAO For Everyone</h2>
+                    <h2>Multi Sport</h2>
                 </div>
             </div>
         </div>

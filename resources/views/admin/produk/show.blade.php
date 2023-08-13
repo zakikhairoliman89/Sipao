@@ -26,10 +26,52 @@
                             <h2>{{ $produk->nama_produk }}</h2>
                             <hr>
                             <h5>Rp. {{ $produk->harga_produk }}</h5>
-                            <h6> Size : {{ $produk->size_produk }} Stok : {{ $produk->stok_produk }} Kategori :
+                            <h6> Stok : {{ $produk->stok_produk }} Kategori :
                                 {{ $produk->kategori_produk }}</h6>
+                            @if (!empty($size_bola))
+                                Size :
+                                @foreach ($size_bola as $bola)
+                                    {{ $bola }},
+                                @endforeach
+                                <br>
+                                Warna Bola :
+                                @foreach ($warna_bola as $bola)
+                                    {{ $bola }},
+                                @endforeach
+                                <br>
+                                Tipe Bola :
+                                @foreach ($tipe_bola as $bola)
+                                    {{ $bola }},
+                                @endforeach
+                            @endif
+
+                            @if (!empty($size_baju))
+                                Size Baju :
+                                @foreach ($size_baju as $baju)
+                                    {{ $baju }},
+                                @endforeach
+                                <br>
+                                Warna Baju :
+                                @foreach ($warna_baju as $baju)
+                                    {{ $baju }},
+                                @endforeach
+                            @endif
+
+                            @if (!empty($size_sepatu))
+                            Size Sepatu :
+                            @foreach ($size_sepatu as $sepatu)
+                                {{ $sepatu }},
+                            @endforeach
+                            <br>
+                            Warna Sepatu :
+                            @foreach ($warna_sepatu as $sepatu)
+                                {{ $sepatu }},
+                            @endforeach
+                        @endif
+
                             <p>
                                 {{ $produk->deskripsi_produk }}
+
                             </p>
                         </div>
                     </div>

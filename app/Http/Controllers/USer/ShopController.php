@@ -20,6 +20,7 @@ class ShopController extends Controller
 
     public function addCart(Request $request)
     {
+        dd($request->all());
         $cart = new Cart();
         $cart->user_id = request('user_id');
         $cart->produk_id = request('produk_id');
@@ -37,6 +38,7 @@ class ShopController extends Controller
             $h[] = $cart->produk->harga_produk;
         }
         $data['total'] = array_sum($h);
+        $data['user'] = auth()->user();
         return view('user.checkout', $data);
     }
 
