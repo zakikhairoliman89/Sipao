@@ -20,7 +20,7 @@ class ShopController extends Controller
 
     public function addCart(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $cart = new Cart();
         $cart->user_id = request('user_id');
         $cart->produk_id = request('produk_id');

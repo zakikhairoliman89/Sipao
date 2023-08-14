@@ -17,6 +17,7 @@
                                     <th class="product-thumbnail">Image</th>
                                     <th class="product-name">Product</th>
                                     <th class="product-price">Price</th>
+                                    <th class="product-price">Add</th>
                                     <th class="product-remove">Remove</th>
                                 </tr>
                             </thead>
@@ -32,6 +33,24 @@
                                             </h2>
                                         </td>
                                         <td>Rp. {{ $cart->produk->harga_produk }}</td>
+                                        <td>
+                                            <div class="my-3">
+                                                <div class="input-group mb-3" style="max-width: 200px;">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-outline-primary js-btn-minus"
+                                                            type="button">&minus;</button>
+                                                    </div>
+                                                    <input type="text" class="form-control text-center border mr-0"
+                                                        value="1" placeholder=""
+                                                        aria-label="Example text with button addon"
+                                                        aria-describedby="button-addon1" name="total">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary js-btn-plus"
+                                                            type="button">&plus;</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <form action="{{ url('cart/delete', $cart->id) }}" method="POST">
                                                 @csrf
